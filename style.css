@@ -1,0 +1,231 @@
+/* =========================================
+   1. VARIABLES & BASE RESETS
+   ========================================= */
+:root {
+    --sys-bg: #050505;
+    --sys-green: #00ff41;
+    --sys-green-dim: rgba(0, 255, 65, 0.4);
+    --sys-text: #e0e0e0;
+    --sys-blue: #3b8eea;
+    --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--sys-bg);
+    color: var(--sys-green);
+    font-family: var(--font-mono);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. OVERLAYS (BOOT SCREEN & CRT SCANLINES)
+   ========================================= */
+.boot-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh;
+    background-color: var(--sys-bg);
+    z-index: 10000;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+.boot-overlay.hidden {
+    opacity: 0; 
+    visibility: hidden;
+}
+
+#boot-btn, .cmd-btn {
+    font-size: 1.5rem; 
+    padding: 1rem 2rem;
+    background: transparent; 
+    color: var(--sys-green);
+    border: 1px solid var(--sys-green);
+    cursor: pointer; 
+    font-family: var(--font-mono);
+    transition: all 0.3s;
+}
+
+#boot-btn:hover, .cmd-btn:hover {
+    background: var(--sys-green);
+    color: var(--sys-bg);
+}
+
+.crt-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* =========================================
+   3. NAVIGATION BAR
+   ========================================= */
+.cli-nav {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px dashed var(--sys-green-dim);
+    background: rgba(0, 5, 0, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cli-nav.hidden {
+    display: none;
+}
+
+.prompt-text {
+    font-weight: 600;
+}
+
+.nav-btn {
+    background: transparent;
+    color: var(--sys-green-dim);
+    border: none;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-shadow: none;
+}
+
+.nav-btn:hover {
+    color: #fff;
+}
+
+.nav-btn.active {
+    color: var(--sys-green);
+    font-weight: 600;
+    text-shadow: 0 0 5px var(--sys-green);
+}
+
+/* =========================================
+   4. MAIN TERMINAL CONTAINER & SECTIONS
+   ========================================= */
+.terminal-container {
+    padding: 2rem 2rem 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cli-section {
+    margin-bottom: 3rem;
+}
+
+.cli-section.hidden {
+    display: none;
+}
+
+/* =========================================
+   5. COMMAND PROMPT & TEXT TYPOGRAPHY
+   ========================================= */
+.cmd-line {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px; /* Spaces out the prompt elements slightly */
+}
+
+.sys-user {
+    color: var(--sys-green);
+    font-weight: 600;
+}
+
+.sys-path {
+    color: var(--sys-blue);
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.cli-output {
+    padding-left: 0;
+}
+
+.sys-out {
+    color: var(--sys-green);
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+    white-space: pre-wrap; /* Crucial for ASCII art and spaces */
+}
+
+.indent-1 {
+    padding-left: 2rem;
+    color: var(--sys-text);
+}
+
+.term-link {
+    color: #ffff00;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: crosshair;
+    transition: all 0.2s;
+    background: rgba(255, 255, 0, 0.1);
+    padding: 0 4px;
+}
+
+.term-link:hover {
+    background: #ffff00;
+    color: var(--sys-bg);
+}
+
+/* =========================================
+   6. SPECIAL ELEMENTS (ASCII & IMAGES)
+   ========================================= */
+.ascii-title {
+    font-size: 10px; 
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 5px var(--sys-green);
+    color: #fff; 
+}
+
+.bio-image {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid var(--sys-green);
+    margin: 1.5rem 0; 
+    
+    /* 1. The Initial Hidden State */
+    clip-path: inset(0 0 100% 0); 
+    opacity: 0.5;
+    
+    /* 2. The Animation Trigger */
+    animation: printerReveal 2.5s steps(40) forwards; 
+}
+
+/* The Animation Logic */
+@keyframes printerReveal {
+    0% { 
+        clip-path: inset(0 0 100% 0); 
+        opacity: 0.75;
+    }
+    100% { 
+        clip-path: inset(0 0 0 0); 
+        opacity: 1;
+        box-shadow: inset 0 0 0 transparent;
+    }
+}

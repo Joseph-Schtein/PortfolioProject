@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS.OP: J_SCHTEIN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="boot-screen" class="boot-overlay">
+        <button id="boot-btn" class="cmd-btn glitch" data-text="> gcc Joseph.c -o sys && ./sys">
+            gcc Joseph.c -o sys && ./sys
+        </button>
+    </div>
+
+    <div class="crt-overlay"></div>
+
+    <nav id="sys-nav" class="cli-nav hidden">
+        <span class="sys-out prompt-text">> EXECUTE:</span>
+        <button class="nav-btn active" data-target="bio">[1] ./sys_boot.sh</button>
+        <button class="nav-btn" data-target="interests">[2] cat personal_data.log</button>
+        <button class="nav-btn" data-target="cv">[3] cat CV.log</button>
+    </nav>
+
+    <main class="terminal-container">
+        
+        <section id="bio" class="cli-section">
+            <div class="cmd-line">
+                <span class="sys-user">root@JosephSchtein</span><span class="sys-path">:~/Kfat-Sava ISR/msc$</span> <span class="sys-out">./sys_boot.sh --verbose</span>
+            </div>
+            <div class="cli-output">
+                <h1 class="sys-out ascii-title">
+       _                      _       ____       _     _       _       
+      | | ___  ___  ___ _ __ | |__   / ___|  ___| |__ | |_ ___(_)_ __  
+   _  | |/ _ \/ __|/ _ \ '_ \| '_ \  \___ \ / __| '_ \| __/ _ \ | '_ \ 
+  | |_| | (_) \__ \  __/ |_) | | | |  ___) | (__| | | | ||  __/ | | | |
+   \___/ \___/|___/\___| .__/|_| |_| |____/ \___|_| |_|\__\___|_|_| |_|
+                       |_|                                             
+                </h1>
+                <p class="sys-out">SYS.OP: JOSEPH SCHTEIN // V_1.7.1</p>
+                <p class="sys-out">LOCATION: Kfat-Sava ISR</p>
+                <p class="sys-out">STATUS: MASTER'S CANDIDATE ONLINE</p>
+                <br>
+
+                <p class="sys-out">> SYSTEM BIO: Developer specializing in heavy mathematical logic, custom rendering (HLSL/Unity), and industrial-grade performance systems.</p>
+                <p class="sys-out">> ACQUIRING TARGET SKILLS: C++, C#, Construct 3, Blender (Rigging/Animation).</p>
+                <div class="sys-out">
+                    <img src="my-photo.jpg" alt="[JOSEPH SCHTEIN]" class="bio-image">
+                </div>
+            </div>
+            <div class="cmd-line"><span class="sys-user">root@JosephSchtein</span><span class="sys-path">:~/Kfat-Sava ISR/msc$</span> <span class="sys-out cursor">_</span></div>
+        </section>
+
+        <section id="interests" class="cli-section hidden">
+            <div class="cmd-line">
+                <span class="sys-user">root@JosephSchtein</span><span class="sys-path">:~/Kfat-Sava ISR/msc$</span> <span class="sys-out">cat personal_data.log</span>
+            </div>
+            <div class="cli-output">
+                <p class="sys-out">====================================================</p>
+                <p class="sys-out">           SYS_LOG: PERSONAL INTERESTS & DATA       </p>
+                <p class="sys-out">====================================================</p>
+                <br>
+                <p class="sys-out">[MODULE: PERCUSSION_DYNAMICS]</p>
+                <p class="sys-out">> STATUS: Active Drummer</p>
+                <p class="sys-out indent-1">- GENRES: Hardcore Punk & Nu Metal.</p>
+                <p class="sys-out indent-1">- FOCUS: Aggressive tempo shifts, heavy grooves, and complex syncopation.</p>
+                <br>
+            <p class="sys-out">[MODULE: INTERACTIVE_MEDIA]</p>
+                <p class="sys-out">> STATUS: Lifelong Gamer & Analyst</p>
+                <p class="sys-out indent-1">- CORE LIBRARY: Extensive hours logged in Halo, Sleeping Dogs, and diverse immersive worlds.</p>
+                <p class="sys-out indent-1">- FOCUS: Bridging gameplay with academic analysis, specifically evaluating the economic factors of remasters and game-based learning.</p>
+                <br>
+                <p class="sys-out">[MODULE: POWERLIFTING_METRICS]</p>
+                <p class="sys-out">> STATUS: Active Powerlifter</p>
+                <p class="sys-out indent-1">- SQUAT: 120 KG</p>
+                <p class="sys-out indent-1">- BENCH PRESS: 102.5 KG</p>
+                <p class="sys-out indent-1">- DEADLIFT: 130 KG</p>
+                <br>
+                <p class="sys-out">EOF</p>
+            </div>
+            <div class="cmd-line"><span class="sys-user">root@JosephSchtein</span><span class="sys-path">:~/Kfat-Sava ISR/msc$</span> <span class="sys-out cursor">_</span></div>
+        </section>
+        <section id="cv" class="cli-section hidden">
+            <div class="cmd-line">
+                <span class="sys-user">root@JosephSchtein</span><span class="sys-path">:~/Kfat-Sava ISR/msc$</span> <span class="sys-out">cat J_SCHTEIN_CV.log</span>
+            </div>
+            <div class="cli-output">
+                <p class="sys-out">====================================================</p>
+                <p class="sys-out">           CURRICULUM VITAE: JOSEPH SCHTEIN         </p>
+                <p class="sys-out">====================================================</p>
+                <br>
+                <p class="sys-out">[MODULE: EXPERIENCE]</p>
+                <p class="sys-out">> 2022-today | Software Engineer @ M.E.A System Testing</p>
+                <p class="sys-out indent-1">- Developing software solutions for diagnostics, monitoring, and controlling electrical motors using C++ and C#.</p>
+                <p class="sys-out indent-1">- Provided proactive and personalized customer support for company software.</p>
+                <br>
+                <p class="sys-out">> 2015-2017 | Experiment Documentary @ Rafael: Dynamic Defense Company</p>
+                <p class="sys-out indent-1">- Responsible for communication and computer systems in the field.</p>
+                <br>
+                <p class="sys-out">[MODULE: EDUCATION]</p>
+                <p class="sys-out">> 2018-2022 | B.Sc. in Computer Science @ Ariel University</p>
+                <p class="sys-out indent-1">- Average: 84.76</p>
+                <p class="sys-out indent-1">- Projects: Final Project (Python/Django, React Native), FoodApp (Java/Firebase), Graph Maze (Java Threads).</p>
+                <br>
+                <p class="sys-out">[MODULE: MILITARY]</p>
+                <p class="sys-out">> 2013-2015 | Soldier at Intelligence Platoon @ "Givati" Combat Unit</p>
+                <br>
+                <p class="sys-out">EOF</p>
+            </div>
+            <div class="cmd-line"><span class="sys-user">root@JosephSchtein</span><span class="sys-path">:~/Kfat-Sava ISR/msc$</span> <span class="sys-out cursor">_</span></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
