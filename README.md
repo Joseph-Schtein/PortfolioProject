@@ -10,7 +10,7 @@ Hobbies: A look into my personal interests and creative pursuits.
 CV: A comprehensive overview of my professional and academic history.
 
 Aesthetic & Inspiration
-The visual design is heavily inspired by zui.ooo. I chose to implement a Linux Bash GUI aesthetic to give the website a technical, terminal-like feel that aligns with the project's conceptual goals.
+The visual design was heavily inspired by zui.ooo (an operating sysytem) but because misunderstanding of Gemini he choose to implement a Linux Bash GUI aesthetic to give the website a technical, terminal-like feel.
 
 How to Run
 To view the website locally on your machine, follow these steps:
